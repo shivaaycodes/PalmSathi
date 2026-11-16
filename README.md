@@ -4,6 +4,8 @@
 
 ### *The digital साथी (companion) for India's oil palm farmers*
 
+##Live Link:- https://palmsathi.netlify.app/
+
 **From the moment a bunch is planted to the moment it becomes money in a wallet — PalmSathi runs the whole journey.**
 
 </div>
