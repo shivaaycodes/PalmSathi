@@ -31,8 +31,6 @@ It's built as two independent apps — a **Node/Express/MongoDB backend** and a 
 
 ##  The "Wow, that's clever" list
 
-If you only remember five things about this app, make it these:
-
 | # | Feature | Why it's clever |
 |---|---------|------------------|
 | 1 | **Freshness Decay Engine** | Models FFA buildup as a curve: rock-solid for 12 hrs, gentle decay to 36 hrs, then a cliff. Every batch has a live, ticking freshness score. |
