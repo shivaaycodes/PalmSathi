@@ -281,7 +281,9 @@ The **Incentive Wallet** shows your total points and a full transaction history 
 The **Hinglish Chatbot** (bottom corner) answers farming questions conversationally — in the mixed Hindi-English way many farmers actually speak — streamed token-by-token in real time.
 
 ### 🔐 Admin Panel
-Navigate to `/admin`, enter the admin password, and you get a claims dashboard: filter by status, and advance claims through `applied → verified → disbursed` with one click. This is the "government office" side of the subsidy workflow.
+Navigate to `/admin` and enter the demo admin password: **`palmsathi_admin_2026`**. You get a claims dashboard: filter by status, and advance claims through `applied → verified → disbursed` with one click. This is the "government office" side of the subsidy workflow.
+
+> This panel simulates the government officer's role. See the note under "Things Worth Knowing" about why the password is hardcoded.
 
 ---
 
@@ -320,8 +322,7 @@ All routes are prefixed with `/api`. Routes marked 🔒 require a JWT (`Authoriz
 ##  Things Worth Knowing Before You Deploy
 
 - **OTP is returned in the API response** for demo purposes — before any real-world use, wire this to an actual SMS/WhatsApp gateway and stop returning the code in the response body.
-- **The Admin panel's password check happens client-side** in `Admin.jsx`, with the real check re-validated server-side via `ADMIN_SECRET`. Treat the admin secret like any other production credential — keep it out of version control and rotate it if it's ever been committed.
-- The frontend's Admin page currently points at a hardcoded `http://localhost:5000/api` — swap this to use `import.meta.env.VITE_API_URL` like the rest of the app before deploying, or the admin panel will only work locally.
+- **Admin password is hardcoded (demo only).** No government body is onboarded to PalmSathi right now, so the admin password is hardcoded in the frontend and visible in the source. It exists only to demonstrate the officer side of the subsidy workflow, and it protects no real data. If a government body is onboarded, I will replace it with proper server-side authentication (officer accounts, tokens and role-based access) and remove the visible password.
 - **Cron jobs** (freshness ticking, daily slot refresh) only run while the backend process is alive — on free-tier hosts that spin down when idle (like Render's free plan), these won't fire during downtime.
 
 ---
